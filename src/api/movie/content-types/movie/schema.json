@@ -4,7 +4,8 @@
   "info": {
     "singularName": "movie",
     "pluralName": "movies",
-    "displayName": "Movies"
+    "displayName": "Movies",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,13 +19,20 @@
       "type": "date"
     },
     "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "actors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actor.actor",
+      "inversedBy": "movies"
     }
   }
 }

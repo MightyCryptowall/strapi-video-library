@@ -16,6 +16,12 @@
     },
     "last_name": {
       "type": "string"
+    },
+    "movies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::movie.movie",
+      "inversedBy": "actors"
     }
   }
 }
